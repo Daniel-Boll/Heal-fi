@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>HMC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-database.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../CSS/homepage_css.css">
+  <script type="text/javascript" src="../../Javascript/homepage_js.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-light bg-light">
+    <img src="../../../images/logo/logo3.png" style="width:200px"alt="">
+    <a class="navbar-brand" style="font-size=80px;">Heal-Fi</a>
+    <form class="form-inline" action="registrar.html">
+      <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" onclick="toRegister();">Registre-se</button>
+    </form>
+  </nav>
+
+  <!-- Login -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Entrar</h5>
+
+            <div class="form-label-group">
+              <input type="email" id="inputCPFCRM" class="form-control" placeholder="CPF ou CRM" required autofocus>
+              <label for="inputEmail">CPF ou CRM</label>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <label for="inputPassword">Senha</label>
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Lembrar senha?</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onclick="sign_in();">Entrar</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer  -->
+  <script src="../../Javascript/app.js"></script>
+</body>
+</html>
