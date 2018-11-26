@@ -85,19 +85,13 @@
   <div class="wrapper">
 
     <!-- Header -->
-    <nav class="navbar navbar-light navbar-fixed-top" style="min-height: 60px;position: fixed;top: 0;right: 0;  left: 0;  background-color: #5cb85c;  z-index: 2; ">
-
+    <nav class="navbar navbar-light navbar-fixed-top" style="min-height: 60px;border-bottom: 0px solid #e9ecef;position: fixed;top: 0;right: 0;  left: 0;  background-color: #14CC7C;  z-index: 2; ">
 
       <a href='home.html'><img src="../../../images/logo/logo3.png" style="max-width:10%" alt=""></a>
 
       <form class="" style="display: inline; padding-left:87%" >
         <i onclick="home_paciente()" style='font-size:20px; cursor: -webkit-grabbing; cursor: grabbing; ' class='fas'>&#xf0f0;</i>
-        <script>
-          function home_paciente() {
-            location.href="home_paciente.html"
-          }
 
-        </script>
       </form>
 
       <!-- <p>User ID</p> -->
@@ -107,12 +101,12 @@
       <div align="center" class="" style="">
         <br>
         <br>
-        <a href="home_paciente.html">HOME</a>
-        <a href="ficha_tecnica.html">Ficha Técnica</a>
-        <a href="consultas.html">Consultas</a>
-        <a href="exames.html">Exames</a>
-        <a href="receitas.html">Receitas</a>
-        <a href="historico.html">Histórico</a>
+        <a onclick='home();'>HOME</a>
+        <a onclick="ficha_tecnica();">Ficha Técnica</a>
+        <a onclick="consulta_html();">Consultas</a>
+        <a onclick="exame();">Exames</a>
+        <a onclick="receita();">Receitas</a>
+        <a onclick="historico();">Histórico</a>
         <a href="" data-toggle="modal"data-target="#exampleModalCenter">Log Out</a>
       </div>
     </div>
@@ -149,14 +143,17 @@
                 <div class="col-auto">
                   <div class="form-row">
                     <div class="form-group col-md-12">
+                      <label for="inputNome">Nome</label>
                       <input class="form-control"placeholder="Nome Completo"   id="inputNome"></input>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-3">
+                      <label for="inputData">Data de Nascimento</label>
                       <input  type="date"class="form-control" placeholder="Data de Nascimento" id="inputData" >
                     </div>
                     <div class="form-group col-md-3">
+                      <label for="inputSexo">Sexo</label>
                       <select id="inputSexo" class="form-control" name=" Sexo">
                         <option value="">Sexo</option>
                         <option value="">Femenino</option>
@@ -164,17 +161,24 @@
                       </select>
                     </div>
                     <div class="form-group col-md-3">
+                      <label for="inputCPF">CPF</label>
                       <input class="form-control"placeholder="CPF"    id="inputCPF"></input>
                     </div>
                     <div class="form-group col-md-3">
-                      <input class="form-control"placeholder="CRM" id="inputCRM"></input>
+                      <label for="inputCRM">CRM</label>
+                      <input class="form-control"placeholder="CRM" id="inputCRM" disabled></input>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-12">
+                      <label for="inputEmail">Email</label>
+                      
                       <input class="form-control"placeholder="Email" id="inputEmail"></input><br>
+                      <label for="inputSenha">Senha</label>
                       <input class="form-control"placeholder="Senha" id="inputSenha"></input> <br>
-
+                    </div>
+                    <div class="form-group col-md-12">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="update();">Atualizar</button>
                     </div>
                   </div>
 
@@ -191,4 +195,5 @@
 </body>
 <script src="../../Javascript/app.js"></script>
 <script src="../../Javascript/perfil_profissional.js"></script>
+<script src="../../Javascript/actions.js"></script>
 </html>

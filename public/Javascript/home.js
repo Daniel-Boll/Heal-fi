@@ -9,9 +9,21 @@ let profissional = {
   dn: document.getElementById("inputData")
 }
 
+let crm = queryObj();
+
+function queryObj() {
+  var result = {}, keyValuePairs = location.search.slice(1).split("&");
+  keyValuePairs.forEach(function(keyValuePair) {
+    keyValuePair = keyValuePair.split('=');
+    result[decodeURIComponent(keyValuePair[0])] = decodeURIComponent(keyValuePair[1]) || '';
+  });
+  return result;
+}
+
 function get_Profissional(){
   firebase.database().ref('/profissional').on('value', function(snapshot) {
-    snapshot.forEach(function(item){        
+    snapshot.forEach(function(item){
+      if(item.val().crm == crm.CRM){        
         profissional.nome.value = item.val().nome;
         profissional.crm.value = item.val().crm;
         profissional.email.value = item.val().email;
@@ -19,8 +31,10 @@ function get_Profissional(){
         profissional.sexo.selectedIndex = (item.val().sexo == "Masculino") ? 2 : 1;
         profissional.cpf.value = item.val().cpf;
         profissional.dn.value = item.val().data_nascimento;
+      }
     });
   });
+  console.log(crm.crm)
 }
 
 function update(){

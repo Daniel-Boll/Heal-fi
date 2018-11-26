@@ -1,3 +1,4 @@
+let crm_url = queryObj();
 let datalist = document.getElementById('pacientesDatalist');
 let inputList = document.getElementById('pacientes');
 let idProdutos=[]
@@ -60,38 +61,14 @@ getPaciente = function(list){
 }
 
 function consultar(){
-	location.href = "home_paciente.html";  
+	location.href = "home_paciente.html?CRM="+crm_url.CRM+"&CPF="+cpf_to_pass.x;  
 }
 
-// Post test
-
-/*
-function consultar(){
-	console.log('me mama');
-	post('home_paciente.html',{teste: cpf_to_pass});
+function queryObj() {
+  var result = {}, keyValuePairs = location.search.slice(1).split("&");
+  keyValuePairs.forEach(function(keyValuePair) {
+    keyValuePair = keyValuePair.split('=');
+    result[decodeURIComponent(keyValuePair[0])] = decodeURIComponent(keyValuePair[1]) || '';
+  });
+  return result;
 }
-
-function post(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
-    var form = document.createElement("form");
-    form.id = "formdata";
-    form.setAttribute("method", method);
-    form.setAttribute("action", path);
-    for(var key in params) {
-        if(params.hasOwnProperty(key)) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-            console.log(params+""+params[key])
-            alert(params+""+params[key]);
-            form.appendChild(hiddenField);
-        }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-}
-*/

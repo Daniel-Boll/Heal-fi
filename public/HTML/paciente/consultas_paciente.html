@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>another page</title>
+  <title>Consultas</title>
 
   <!-- Firebase App is always required and must be first -->
   <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
@@ -20,60 +20,65 @@
       $("#cpf").mask("999.999.999-99");
     });
   </script>
-  <script type="text/javascript">
-    jQuery(window).load(function($){
-      atualizaRelogio();
-    });
-  </script>
-  <script>
-    function atualizaRelogio(){
-      var momentoAtual = new Date();
+  <style>
+  a{
+    cursor: pointer;
+  }
+</style>
+<script type="text/javascript">
+  jQuery(window).load(function($){
+    atualizaRelogio();
+  });
+</script>
+<script>
+  function atualizaRelogio(){
+    var momentoAtual = new Date();
 
-      var vhora = momentoAtual.getHours();
-      var vminuto = momentoAtual.getMinutes();
-      var vsegundo = momentoAtual.getSeconds();
+    var vhora = momentoAtual.getHours();
+    var vminuto = momentoAtual.getMinutes();
+    var vsegundo = momentoAtual.getSeconds();
 
-      var vdia = momentoAtual.getDate();
-      var vmes = momentoAtual.getMonth() + 1;
-      var vano = momentoAtual.getFullYear();
+    var vdia = momentoAtual.getDate();
+    var vmes = momentoAtual.getMonth() + 1;
+    var vano = momentoAtual.getFullYear();
 
-      if (vdia < 10){ vdia = "0" + vdia;}
-      if (vmes < 10){ vmes = "0" + vmes;}
-      if (vhora < 10){ vhora = "0" + vhora;}
-      if (vminuto < 10){ vminuto = "0" + vminuto;}
-      if (vsegundo < 10){ vsegundo = "0" + vsegundo;}
+    if (vdia < 10){ vdia = "0" + vdia;}
+    if (vmes < 10){ vmes = "0" + vmes;}
+    if (vhora < 10){ vhora = "0" + vhora;}
+    if (vminuto < 10){ vminuto = "0" + vminuto;}
+    if (vsegundo < 10){ vsegundo = "0" + vsegundo;}
 
-      dataFormat = vdia + " / " + vmes + " / " + vano;
-      horaFormat = vhora + " : " + vminuto + " : " + vsegundo;
+    dataFormat = vdia + " / " + vmes + " / " + vano;
+    horaFormat = vhora + " : " + vminuto + " : " + vsegundo;
 
-      document.getElementById("data").innerHTML = dataFormat;
-      document.getElementById("hora").innerHTML = horaFormat;
+    document.getElementById("data").innerHTML = dataFormat;
+    document.getElementById("hora").innerHTML = horaFormat;
 
-      setTimeout("atualizaRelogio()",1000);
-    }
+    setTimeout("atualizaRelogio()",1000);
+  }
 
-  </script>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="../../CSS/pacientes.css">
-  <link rel="stylesheet" href="../../CSS/sidebar.css">
-  <!-- SB ADMIN -->
-  <link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-  <!-- MetisMenu CSS -->
-  <link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+</script>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="../../CSS/pacientes.css">
+<link rel="stylesheet" href="../../CSS/sidebar.css">
+<!-- SB ADMIN -->
+<link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+<!-- MetisMenu CSS -->
+<link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link href="../../../startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="../../../startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css" rel="stylesheet">
 
-  <!-- Morris Charts CSS -->
-  <link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css" rel="stylesheet">
 
-  <!-- Custom Fonts -->
-  <link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="../../../startbootstrap-sb-admin-2-gh-pages/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -82,33 +87,54 @@
   <div class="wrapper">
 
     <!-- Header -->
-    <nav class="navbar navbar-light navbar-fixed-top" style="min-height: 60px;border-bottom: 0px solid #e9ecef;position: fixed;top: 0;right: 0;  left: 0;  background-color: #5cb85c;  z-index: 2; ">
+    <nav class="navbar navbar-light navbar-fixed-top" style="min-height: 60px;border-bottom: 0px solid #e9ecef;position: fixed;top: 0;right: 0;  left: 0;  background-color: #14CC7C;  z-index: 2; ">
       <a href='home.html'><img src="../../../images/logo/logo3.png" style="max-width:10%" alt=""></a>
       <form class="" style="display: inline; padding-left:87%" >
-      <i onclick="voltar()" style='font-size:20px; cursor: -webkit-grabbing; cursor: grabbing; ' class='fas'>&#xf0f9;</i>
-      <script>
-      function voltar() {
-        location.href="../../../public/HTML/Login/homepage.html"
+        <i onclick="voltar()" style='font-size:20px; cursor: -webkit-grabbing; cursor: grabbing; ' class='fas'>&#xf0f9;</i>
+        <script>
+          function voltar() {
+            location.href="../../../public/HTML/Login/homepage.html"
 
-      }
+          }
 
-      </script>
+        </script>
       </form>
     </nav>
     <div class="sidenav">
       <div align="center" class="" style="">
-        <a href="home_paciente.html">HOME</a>
-        <a href="ficha_tecnica_paciente.html">Ficha Técnica</a>
-        <a href="consultas_paciente.html">Consultas</a>
-        <a href="exames_paciente.html">Exames</a>
-        <a href="receitas_paciente.html">Receitas</a>
-        <a href="historico_paciente.html">Histórico</a>
+        <a onclick="home_paciente();">HOME</a>
+        <a onclick="ficha_tecnica_paciente();">Ficha Técnica</a>
+        <a onclick="consultas_paciente();">Consultas</a>
+        <a onclick="exames_paciente();">Exames</a>
+        <a onclick="receitas_paciente();">Receitas</a>
+        <a onclick="historico_paciente();">Histórico</a>
       </div>
     </div>
     <h1 style="font-family:Impact, Charcoal, sans-serif">Consultas</h1>
     <div class="page-wrapper">
       <div class="row">
         <div class="col-lg-11">
+          <div class="modal fade" id="exampleModalCenter_consulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Consulta</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group col-md-12"><br>
+                    <label for="inputSintoma">Sintomas</label>
+                    <textarea id="inputSintoma_modal" placeholder="Sintomas" style="resize: none; width: 100%; height: 120px;border-radius:4px" disabled></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="myReset" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="panel panel-green">
             <div center class="panel-heading">
               Consultas
@@ -119,12 +145,12 @@
                   <thead>
                     <tr class="table table-striped table-bordered table-hover">
                       <th>Código</th>
-                      <th>CRM do profissional</th>
                       <th>Data</th>
                       <th>Hora</th>
-                      <th>Instituição</th>
                       <th>Profissional</th>
-                      <th>Tipo da consulta</th>
+                      <th>CRM</th>
+                      <th>Tipo</th>
+                      <th>Intituição</th>
                     </tr>
                   </thead>
                 </table>
@@ -139,6 +165,9 @@
 
 <script src="../../Javascript/app.js"></script>
 <script src="../../Javascript/consultas.js"></script>
+<script src="../../Javascript/actions_paciente.js"></script>
+<script src="../../Javascript/modal.js"></script>
+
 <!-- jQuery -->
 <script src="../../../startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
 

@@ -11,7 +11,7 @@ function queryObj() {
   return result;
 }
 
-getPaciente = function(list){
+getPaciente_paciente = function(list){
 	firebase.database().ref('/paciente').on('value', function(snapshot) {
 		snapshot.forEach(function(item){
 			if(item.val().ficha_normal.cpf == consulta_url.CPF){
@@ -26,14 +26,6 @@ getPaciente = function(list){
 						document.getElementById("inputSintoma_modal").value = item.val().consulta[itens].sintomas;
 					}
 
-					// <th>Código</th>
-     //            <th>Data</th>
-     //            <th>Hora</th>
-     //            <th>Profissional</th>
-     //            <th>CRM</th>
-     //            <th>Tipo</th>
-     //            <th>Intituição</th>
-
 			        // codigo
 			        let td_codigo = document.createElement("td");
 			        td_codigo.id = "td_codigo";
@@ -41,7 +33,14 @@ getPaciente = function(list){
 			        td_codigo.appendChild(codigo);
 			        tr.appendChild(td_codigo);
 			        table.appendChild(tr);
-			        
+
+			        let td_crm_medico = document.createElement("td");
+			        td_crm_medico.id = "td_crm_medico";
+			        let crm_medico = document.createTextNode(item.val().consulta[itens].crm_medico);
+			        td_crm_medico.appendChild(crm_medico);
+			        tr.appendChild(td_crm_medico);
+			        table.appendChild(tr);
+
 			        let td_data = document.createElement("td");
 			        td_data.id = "td_data";
 			        let data = document.createTextNode(item.val().consulta[itens].data);
@@ -56,21 +55,6 @@ getPaciente = function(list){
 			        tr.appendChild(td_hora);
 			        table.appendChild(tr);
 
-			        let td_nome_medico = document.createElement("td");
-			        td_nome_medico.id = "td_nome_medico";
-			        let nome_medico = document.createTextNode(item.val().consulta[itens].nome_medico);
-			        td_nome_medico.appendChild(nome_medico);
-			        tr.appendChild(td_nome_medico);
-			        table.appendChild(tr);
-			        
-			        let td_crm_medico = document.createElement("td");
-			        td_crm_medico.id = "td_crm_medico";
-			        let crm_medico = document.createTextNode(item.val().consulta[itens].crm_medico);
-			        td_crm_medico.appendChild(crm_medico);
-			        tr.appendChild(td_crm_medico);
-			        table.appendChild(tr);
-
-
 			        let td_instituicao = document.createElement("td");
 			        td_instituicao.id = "td_instituicao";
 			        let instituicao = document.createTextNode(item.val().consulta[itens].instituicao);
@@ -78,6 +62,12 @@ getPaciente = function(list){
 			        tr.appendChild(td_instituicao);
 			        table.appendChild(tr);
 
+			        let td_nome_medico = document.createElement("td");
+			        td_nome_medico.id = "td_nome_medico";
+			        let nome_medico = document.createTextNode(item.val().consulta[itens].nome_medico);
+			        td_nome_medico.appendChild(nome_medico);
+			        tr.appendChild(td_nome_medico);
+			        table.appendChild(tr);
 
 			        let td_tipo_consulta = document.createElement("td");
 			        td_tipo_consulta.id = "td_tipo_consulta";

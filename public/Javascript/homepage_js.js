@@ -12,7 +12,7 @@ function sign_in(){
 			let senha = document.getElementById('inputPassword').value;
 			console.log(item.val());
 			if(crm == item.val().crm && senha == item.val().senha){
-				location.href = "../Profissional/home.html"
+				location.href = "../Profissional/home.html?CRM="+item.val().crm;
 			}
 		});
 	});
@@ -23,7 +23,7 @@ function sign_in(){
 			let senha = document.getElementById('inputPassword').value;
 			console.log(item.val());
 			if(cpf == item.val().ficha_normal.cpf && senha == item.val().ficha_normal.senha){
-				location.href = "../paciente/home_paciente.html"
+				location.href = "../paciente/home_paciente.html?CPF="+item.val().ficha_normal.cpf;
 			}
 		});
 	});

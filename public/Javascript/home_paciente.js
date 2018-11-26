@@ -1,6 +1,6 @@
 var database = firebase.database();
 let nome, data_nascimento, sexo_doc, cpf, rg, mae, pai, nacionalidade, mp_nasc, situacao_fm, raca_cor, grau, endereco, numero, bairro, ocupacao, uf;
-
+let url_object = queryObj();
 function get_paciente(){
   nome = document.getElementById("paciente_nome");
   data_nascimento = document.getElementById("paciente_data_nascimento");
@@ -22,6 +22,7 @@ function get_paciente(){
 
   firebase.database().ref('/paciente').on('value', function(snapshot) {
     snapshot.forEach(function(item){
+      if (url_object.CPF == item.val().ficha_normal.cpf){
         nome.value = item.val().ficha_normal.nome;
         data_nascimento.value = item.val().ficha_normal.data_nascimento;
         sexo_doc.selectedIndex = (item.val().ficha_normal.sexo == "Masculino") ? 2 : 1;
@@ -39,7 +40,8 @@ function get_paciente(){
         bairro.value = item.val().ficha_normal.bairro;
         uf.value = item.val().ficha_normal.uf;
         ocupacao.value = item.val().ficha_normal.ocupacao;
-		});
+      }
+    });
   });
 }
 
@@ -68,6 +70,14 @@ function updatePaciente(){
     } else {
       window.alert("Dados salvos");
     }
+  }); 
+}
+
+function queryObj() {
+  var result = {}, keyValuePairs = location.search.slice(1).split("&");
+  keyValuePairs.forEach(function(keyValuePair) {
+    keyValuePair = keyValuePair.split('=');
+    result[decodeURIComponent(keyValuePair[0])] = decodeURIComponent(keyValuePair[1]) || '';
   });
-  
+  return result;
 }
